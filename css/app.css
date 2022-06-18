@@ -112,3 +112,10 @@ html{
     background-color: green;
     transform: scale(90%,90%);
 }
+
+@media screen and (max-width:650px) {
+    .calculator{
+        width: 100%;
+        height: 100vh;
+    }
+}
