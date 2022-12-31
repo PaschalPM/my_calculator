@@ -18,6 +18,7 @@ html{
     justify-content: center;
     align-items: center;
     background-color:var(--app_bg_color);
+    user-select: none;
 }
 
 .calculator{
@@ -29,7 +30,9 @@ html{
 }
 
 .calculator .title{
-    position: absolute; top:5px;left:5px; font-weight:700;
+    position: absolute; top:5px; left:5px; 
+    font-weight:500; letter-spacing: 3px;
+    font-size: .85em;
 }
 
 .calculator_inner{
@@ -61,14 +64,32 @@ html{
     background-color: rgb(49, 41, 41);
     padding: 5px;
     padding-top:10px;
-    font-size: 120%;
+    font-size: 100%;
+    white-space: nowrap;
+    display: flex;
+    justify-content: end;
+    align-items: center;
+    position: relative;
+}
+.expr{
+    width: fit-content;
+}
+.over_sym{
+    background-color: rgb(49, 41, 41);
+    position: absolute;
+    left: 0;
+    font-size: 1.2em;
+    color: rgb(213, 159, 23);
+}
+.display_none{
+    display: none;
 }
 .screen_inner_2{
     display: flex;
     justify-content: end;
     align-items: flex-end;
     font-family: monospace;
-    font-size: 200%;
+    font-size: 150%;
     height: 60%;
     width: 100%; 
     transition-property: all;
@@ -83,7 +104,6 @@ html{
     display: flex;
     justify-content: center;
     align-items: center;
-    user-select: none;
 }
 
 .number_btn{
@@ -113,6 +133,19 @@ html{
     transform: scale(90%,90%);
 }
 
+.exit{
+    background-color: rgb(217, 9, 9);
+    padding: .12em 1.25em;
+    position: absolute;
+    right: 10px;
+    color: rgb(221, 212, 212);
+    font-size: 1.2em;
+}
+.exit:hover{
+    background-color: rgb(172, 7, 7);
+    color: white;
+}
+
 @media screen and (orientation:portrait) and (any-pointer:coarse) {
     .calculator{
         width: 100%;
@@ -125,5 +158,14 @@ html{
     
     .btn:active{
         background-color: red;
+    }
+    .calculator .title{
+        font-size: 1.15em;
+    }
+    .screen_inner_1{
+        font-size: 1.5em;
+    }
+    .screen_inner_2{
+        font-size: 2.1em;
     }
 }
